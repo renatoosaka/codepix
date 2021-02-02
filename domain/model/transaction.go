@@ -28,10 +28,10 @@ type Transactions struct {
 type Transaction struct {
 	Base              `valid:"required"`
 	AccountFrom       *Account `json:"account_from" valid:"-"`
-	AccountFromID     string   `json:"-" gorm:"column:account_from_id;type:uuid;notnull" valid:"notnull"`
+	AccountFromID     string   `json:"-" gorm:"column:account_from_id;type:uuid;not null" valid:"notnull"`
 	Amount            float64  `json:"ammount" gorm:"type:float" valid:"notnull"`
 	PixKeyTo          *PixKey  `json:"pix_key_to" valid:"-"`
-	PixKeyIDTo        string   `json:"-" gorm:"column:pix_key_id;type:uuid;notnull" valid:"notnull"`
+	PixKeyIDTo        string   `json:"-" gorm:"column:pix_key_id;type:uuid;not null" valid:"notnull"`
 	Status            string   `json:"status" gorm:"type:varchar(20)" valid:"notnull"`
 	Description       string   `json:"description" gorm:"type:varchar(255)" valid:"notnull"`
 	CancelDescription string   `json:"cancel_description" gorm:"type:varchar(255)" valid:"-"`

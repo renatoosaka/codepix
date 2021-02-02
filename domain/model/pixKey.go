@@ -21,7 +21,7 @@ type PixKey struct {
 	Base      `valid:"required"`
 	Kind      string   `json:"kind" gorm:"type:varchar(20)" valid:"notnull"`
 	Key       string   `json:"key" gorm:"type:varchar(255)" valid:"notnull"`
-	AccountID string   `json:"-" gorm:"column:account_id;type:uuid:notnull" valid:"notnull"`
+	AccountID string   `json:"-" gorm:"column:account_id;type:uuid;not null" valid:"notnull"`
 	Account   *Account `json:"account" valid:"-"`
 	Status    string   `json:"status" gorm:"type:varchar(20)" valid:"notnull"`
 }

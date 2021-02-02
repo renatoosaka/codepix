@@ -9,10 +9,10 @@ import (
 
 type Account struct {
 	Base      `valid:"required"`
-	OwnerName string    `json:"owner_name" gorm:"column:owner_name;type:varchar(255);notnull" valid:"notnull"`
+	OwnerName string    `json:"owner_name" gorm:"column:owner_name;type:varchar(255);not null" valid:"notnull"`
 	Bank      *Bank     `json:"bank" valid:"-"`
-	BankID    string    `json:"-" gorm:"column:bank_id;type:uuid;notnull" valid:"-"`
-	Number    string    `json:"number" gorm:"varchar(20)" valid:"notnull"`
+	BankID    string    `json:"-" gorm:"column:bank_id;type:uuid;not null" valid:"-"`
+	Number    string    `json:"number" gorm:"type:varchar(20)" valid:"notnull"`
 	PixKeys   []*PixKey `json:"pix_keys" gorm:"ForeignKey:AccountID" valid:"-"`
 }
 
